@@ -1,0 +1,14 @@
+.container#ctj {
+    padding-top: 50px;
+   height: 100px;
+   width: 400px;
+}
+
+.container2 .card {
+    width: 390px;
+    height: 300px;
+    background-color: rgb(221, 219, 219);
+}
+.container2 .card-body p {
+    color: rgb(155, 13, 13);
+}

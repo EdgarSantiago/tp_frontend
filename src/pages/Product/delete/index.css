@@ -1,0 +1,15 @@
+.container2 {
+    position: absolute;
+    right: 10px;
+    left: 495px;
+    bottom: 200px;
+}
+
+.container2 .card {
+    width: 390px;
+    height: 300px;
+    background-color: rgb(221, 219, 219);
+}
+.container2 .card-body p {
+    color: rgb(155, 13, 13);
+}

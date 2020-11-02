@@ -1,0 +1,31 @@
+.add-user {
+    width: 380px;
+    height: 400px;
+    background-color: rgb(167, 164, 164);
+    position: fixed;
+    border-radius: 20px;
+   
+}
+
+
+.add-user legend {
+    font-family: sans-serif, Helvetica, sans-serif;
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: -10px;
+
+}
+ 
+.add-user input {
+    position: static;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    color: rgb(37, 37, 37);
+}
+
+
+
+.container#ct13{
+    padding-top: 50px;
+}

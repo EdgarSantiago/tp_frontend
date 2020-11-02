@@ -1,0 +1,152 @@
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import '../inser/index.css';
+
+class InserUser extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: {
+                name: "",
+                adress: "",
+                number: "",
+                email: ""
+            },
+            erro: null,
+            redirect: false
+        };
+    }
+
+    exibeErro() {
+        const { erro } = this.state;
+
+        if (erro) {
+            return (
+                <div className="alert alert-danger" role="alert">
+                    Erro de conexão com o servidor
+                </div>
+            );
+        }
+    }
+    render() {
+        const { redirect } = this.state;
+        if (redirect) {
+            return <Redirect to="/users" />;
+        } else {
+            return (
+               <div id="ct13" className="container d-flex justify-content-center">
+                <div className="container" class="add-user bg-light shadow-lg p-3 mb-5 bg-white rounded ">
+                    <div className="container d-flex justify-content-center">
+                    <form onSubmit={this.handleSubmit}>
+                        <fieldset>
+                            <legend>Add user</legend>
+                            <div className="user-insert">
+                                <br />
+                                <input class="form-control mr-sm-2"
+                                    type="text"
+                                    aria-label="Name"
+                                    id="name"
+                                    name="name"
+                                    placeholder="name"
+                                    minLength="1"
+                                    maxLength="100"
+                                    required
+                                    value={this.state.user.name}
+                                    onChange={this.handleInputChange}></input>
+                            </div>
+                            <div className="user-insert">
+                                <br />
+                                <input class="form-control mr-sm-2"
+                                    type="text"
+                                    aria-label="Adress"
+                                    id="adress"
+                                    name="adress"
+                                    placeholder="adress"
+                                    minLength="1"
+                                    maxLength="100"
+                                    required
+                                    value={this.state.user.adress}
+                                    onChange={this.handleInputChange}></input>
+                            </div>
+                            <div className="user-insert">
+                                <br />
+                                <input class="form-control mr-sm-2"
+                                    type="text"
+                                    aria-label="Email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    minLength="1"
+                                    maxLength="100"
+                                    required
+                                    value={this.state.user.email}
+                                    onChange={this.handleInputChange}></input>
+                            </div>
+
+                            <div className="user-insert">
+                                <br />
+                                <input class="form-control mr-sm-2"
+                                    type="text"
+                                    aria-label="number"
+                                    id="number"
+                                    name="number"
+                                    placeholder="Number"
+                                    minLength="1"
+                                    maxLength="100"
+                                    required
+                                    value={this.state.user.number}
+                                    onChange={this.handleInputChange}></input>
+                            </div>
+                            <br></br>
+                            <div class="btn1 d-flex justify-content-center">
+                            <button type="submit" className="btn btn-primary">
+                                Append
+                    </button>
+                    </div>
+                        </fieldset>
+                    </form>
+                    </div>
+                </div>
+                </div>
+            );
+        }
+    }
+
+    handleInputChange = event => {
+        const target = event.target;
+        const name = target.name;
+        const value = target.value;
+
+        this.setState(prevState => ({
+            user: { ...prevState.user, [name]: value }
+        }));
+        console.log(value);
+    };
+
+    handleSubmit = event => {
+        fetch(`${process.env.REACT_APP_API_URL}/laloja/users`, {
+            method: "post",
+            body: JSON.stringify(this.state.user),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(data => {
+                if (data.ok) {
+                    this.setState({ redirect: true });
+                } else {
+                    data.json().then(data => {
+                        if (data.error) {
+                            this.setState({ erro: data.error });
+                        }
+                    });
+                }
+            })
+            .catch(erro => this.setState({ erro: erro }));
+
+        event.preventDefault();
+    };
+}
+
+export default InserUser;
