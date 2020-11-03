@@ -14,7 +14,7 @@ export default class Main extends Component {
     }
  
     componentDidMount() {
-        fetch(`${process.env.REACT_APP_API_URL}`)
+        fetch(`${process.env.REACT_APP_API_URL}/laloja/products`)
             .then(product =>
                 product.json().then(product => this.setState({ product }))
             )

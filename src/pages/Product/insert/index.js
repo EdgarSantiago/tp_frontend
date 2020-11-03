@@ -126,7 +126,7 @@ class CriarProduct extends Component {
     };
 
     handleSubmit = event => {
-        fetch(`${process.env.REACT_APP_API_URL}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/laloja/products`, {
             method: "post",
             body: JSON.stringify(this.state.product),
             headers: {
