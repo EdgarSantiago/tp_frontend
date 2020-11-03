@@ -10,7 +10,7 @@ export default class Product extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
 
-        fetch(`${process.env.REACT_APP_API_URL}/laloja/products/${id}`)
+        fetch(`${process.env.REACT_APP_API_URL}/${id}`)
             .then(product =>
                 product.json().then(product => this.setState({ product }))
             )

@@ -33,7 +33,7 @@ class EditarProduct extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
 
-        fetch(`${process.env.REACT_APP_API_URL}/laloja/products/${id}`)
+        fetch(`${process.env.REACT_APP_API_URL}/${id}`)
             .then(data => {
                 data.json().then(data => {
                     if (data.error) {
@@ -147,7 +147,7 @@ class EditarProduct extends Component {
     handleSubmit = event => {
         const { id } = this.state.product;
 
-        fetch(`${process.env.REACT_APP_API_URL}/laloja/products/${id}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/${id}`, {
             method: "put",
             body: JSON.stringify(this.state.product),
             headers: {
