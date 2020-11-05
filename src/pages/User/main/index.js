@@ -26,11 +26,11 @@ export default class Main extends Component {
  
         return (
             <div className="user-list">
-                <Link to={`/criarUser`}> <button type="button" class="btn btn-warning">New</button> </Link>
+                <Link to={`/criarUser`}> <button type="button" class="btn btn-danger">New</button> </Link>
                 <br /><br />
 
  
-                <table class="table table-hover">
+                <table class="table table-hover table-dark">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
