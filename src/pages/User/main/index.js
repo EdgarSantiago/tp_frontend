@@ -53,11 +53,6 @@ export default class Main extends Component {
                                 <td> <Link to={`/deletarUser/${user.id}`}> <button type="button" class="btn btn-danger">Delete</button> </Link></td>
                             </tr>
                         ))}  
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
                     </tbody>
                 </table>
             </div>

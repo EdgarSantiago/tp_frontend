@@ -27,7 +27,7 @@ export default class Main extends Component {
         return (
             
             <div className="container product-list">
-                <Link to={`/criarproduct`}> <button type="button" class="btn btn-danger">New</button> </Link>
+                <Link to={`/criarProduct`}> <button type="button" class="btn btn-danger">New</button> </Link>
                 <br /><br />
 
  
