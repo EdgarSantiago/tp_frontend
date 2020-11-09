@@ -49,7 +49,7 @@ export default class Main extends Component {
                                 <td>{product.costprice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                                 <td>{product.costsell.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                                 <td id="t123">{product.stockamout.toLocaleString('pt-BR')}</td>
-                                <td> <Link to={`/products/${product.id}`}> <button type="button" class="btn btn-dark">Details</button> </Link> </td>
+                                <td> <Link to={`/products/${product.id}`}> <button type="button" class="btn btn-primary">Details</button> </Link> </td>
                                 <td> <Link to={`/editarProduct/${product.id}`}> <button type="button" class="btn btn-warning">Update</button> </Link></td>
                                 <td> <Link to={`/deletarProduct/${product.id}`}> <button type="button" class="btn btn-danger">Delete</button> </Link></td>
                             </tr>
