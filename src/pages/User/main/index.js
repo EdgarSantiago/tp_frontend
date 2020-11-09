@@ -48,7 +48,7 @@ export default class Main extends Component {
                                 <td>{user.adress}</td>
                                 <td>{user.number}</td>
                                 <td id="t123">{user.email}</td>
-                                <td> <Link to={`/users/${user.id}`}> <button type="button" class="btn btn-dark">Details</button> </Link> </td>
+                                <td> <Link to={`/users/${user.id}`}> <button type="button" class="btn btn-primary">Details</button> </Link> </td>
                                 <td> <Link to={`/editarUser/${user.id}`}> <button type="button" class="btn btn-warning">Update</button> </Link></td>
                                 <td> <Link to={`/deletarUser/${user.id}`}> <button type="button" class="btn btn-danger">Delete</button> </Link></td>
                             </tr>
